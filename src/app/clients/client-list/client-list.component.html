@@ -1,1 +1,13 @@
-<app-client-item></app-client-item>
+<!-- <div class="row bottom-buffer-small">
+  <div class="col-xs-12">
+    <button class="btn btn-success">Ügyfél hozzáadása</button>
+  </div>
+</div> -->
+<div class="row">
+    <app-client-item
+      *ngFor="let clientItem of clients"
+      [client]=clientItem
+      (clientSelected)="onClientSelected(clientItem)"
+    ></app-client-item>
+</div>
+

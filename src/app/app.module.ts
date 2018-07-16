@@ -15,6 +15,8 @@ import { ProjectDetailComponent } from './projects/project-detail/project-detail
 import { ProjectItemComponent } from './projects/project-list/project-item/project-item.component';
 import { TaskItemComponent } from './tasks/task-list/task-item/task-item.component';
 import { ClientItemComponent } from './clients/client-list/client-item/client-item.component';
+import { ClientDetailComponent } from './clients/client-detail/client-detail.component';
+import { TaskFormComponent } from './tasks/task-form/task-form.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { ClientItemComponent } from './clients/client-list/client-item/client-it
     ProjectDetailComponent,
     ProjectItemComponent,
     TaskItemComponent,
-    ClientItemComponent
+    ClientItemComponent,
+    ClientDetailComponent,
+    TaskFormComponent
   ],
   imports: [
     BrowserModule,

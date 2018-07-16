@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Client } from '../../../shared/clients.model';
 
 @Component({
   selector: 'app-client-item',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./client-item.component.css']
 })
 export class ClientItemComponent implements OnInit {
+  @Input() client: Client;
+  @Output() clientSelected = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit() {
+
+  }
+
+  onSelected() {
+    this.clientSelected.emit();
   }
 
 }

@@ -10,11 +10,11 @@
       <a href="#" class="navbar-brand">MunkaSzerv</a>
     </div>
 
-    <div id="navbar" class="collapse navbar-collapse">
+    <div id="menuNavbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li><a href="#">Ügyfelek</a></li>
-        <li><a href="#">Projektek</a></li>
-        <li><a href="#">Feladatok</a></li>
+        <li><a href="#" (click)="onSelect(MenuItem.Projects)">Projektek</a></li>
+        <li><a href="#" (click)="onSelect(MenuItem.Tasks)">Feladatok</a></li>
+        <li><a href="#" (click)="onSelect(MenuItem.Clients)">Ügyfelek</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
@@ -25,6 +25,23 @@
           </ul>
         </li>
       </ul>
+    </div>
+    <div id="buttonNavbar" class="collapse navbar-collapse" [ngSwitch]="actPageSelected">
+        <ul class="nav navbar-nav" *ngSwitchCase="MenuItem.Projects" >
+            <li><button class="btn btn-default" (click)="NewItem(MenuItem.Projects)">Új Projekt</button></li>
+            <!-- <li><button class="btn btn-primary">Új</button></li> -->
+            <!-- <li><button class="btn btn-primary">Új</button></li> -->
+        </ul>
+        <ul class="nav navbar-nav" *ngSwitchCase="MenuItem.Tasks" >
+            <li><button class="btn btn-default" (click)="NewItem(MenuItem.Tasks)">Új Feladat</button></li>
+            <!-- <li><button class="btn btn-primary">Új</button></li> -->
+            <!-- <li><button class="btn btn-primary">Új</button></li> -->
+        </ul>
+        <ul class="nav navbar-nav" *ngSwitchCase="MenuItem.Clients">
+            <li><button class="btn btn-default" (click)="NewItem(MenuItem.Clients)">Új Ügyfél</button></li>
+            <!-- <li><button class="btn btn-primary">Új</button></li> -->
+            <!-- <li><button class="btn btn-primary">Új</button></li> -->
+        </ul>
     </div>
   </div>
 </nav>

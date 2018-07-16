@@ -1,12 +1,10 @@
-<app-header></app-header>
+<app-header (pageSelected)="onNav($event)" (newItemSelected)="onNewSelected($event)"></app-header>
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <app-clients></app-clients>
-      <hr>
-      <app-projects></app-projects>
-      <hr>
-      <app-tasks></app-tasks>
+    <div class="col-md-12"  [ngSwitch]="loadedPage">
+      <app-projects *ngSwitchCase="MenuItem.Projects"></app-projects>
+      <app-tasks *ngSwitchCase="MenuItem.Tasks"></app-tasks>
+      <app-clients *ngSwitchCase="MenuItem.Clients"></app-clients>
     </div>
   </div>
 </div>

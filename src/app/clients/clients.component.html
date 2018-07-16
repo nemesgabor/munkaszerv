@@ -1,1 +1,15 @@
-<app-client-list></app-client-list>
+<div class="row">
+  <div class="col-md-12">
+    <h2>Ügyfelek</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <app-client-list (ClientItemSelected)="selectedClient = $event"></app-client-list>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <app-client-detail *ngIf="selectedClient" [clientItem]="selectedClient"></app-client-detail>
+  </div>
+</div>
